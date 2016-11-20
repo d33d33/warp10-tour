@@ -25,5 +25,5 @@ The tour is divided into a list of modules. See [lessons][lessons]. **Lessons** 
 ## license
 Released under [the MIT license][license].
 
-[lessons]: https://github.com/d33d33/warp10-tour/lessons
+[lessons]: https://github.com/d33d33/warp10-tour/blob/master/lessons
 [license]: https://github.com/sdelements/warp10-tour/blob/master/LICENSE
