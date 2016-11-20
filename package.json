@@ -12,6 +12,7 @@
     "jquery-resizable-dom": "^0.18.0",
     "json-formatter-js": "^1.2.0",
     "milligram": "^1.2.0",
+    "moment": "^2.16.0",
     "normalize": "^0.3.1",
     "showdown": "^1.5.0"
   },

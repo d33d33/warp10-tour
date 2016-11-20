@@ -86,6 +86,11 @@ module.exports = function (grunt) {
           src: ['c3.min.css*'],
           dest: 'dist/css/'
         }, {
+          expand: true,
+          cwd: 'node_modules/moment/',
+          src: ['moment.js'],
+          dest: 'dist/js/'
+        }, {
           src: ['lessons.js'],
           dest: 'dist/js/'
         }]

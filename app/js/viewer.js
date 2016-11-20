@@ -42,13 +42,15 @@ $(function () {
           var x = ['x-' + gts.c];
           var d = [gts.c];
           gts.v.forEach(function (v) {
-            x.push(Math.round(v[0] / 1000));
+            x.push(Math.round(v[0]));
             d.push(v[1]);
           });
 
           dataset.push(x, d);
           xs[gts.c] = 'x-' + gts.c;
         });
+
+        console.log(dataset);
 
         $('#ans').html('<div class="ct-chart" style="position: absolute; top: 0; left: 0; right: 0; bottom:0; overflow: hidden;"><div id="chart"></div></div>');
         modeBtn = $('<button class="button button-outline" style="position: absolute; top: 10px; right: 10px;">json</button>');
@@ -63,17 +65,13 @@ $(function () {
           },
           axis: {
             x: {
-              type: 'timeseries',
-              localtime: false,
-              tick: {
-                format: ' ',
-              }
+              type: 'indexed' // Values hidden by css
             }
           },
           tooltip: {
             format: {
               title: function (x) {
-                return x.toISOString();
+                return moment(x/1000).toISOString();
               }
             }
           }
