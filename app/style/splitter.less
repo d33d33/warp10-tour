@@ -1,0 +1,35 @@
+@sp-split-dim: 8px;
+
+.sp-board {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    /* avoid browser level touch actions */
+    xtouch-action: none;
+
+    .sp-panel:nth-child(1) {
+        flex: 0 0 auto;
+    }
+
+    .sp-panel {
+        flex: 1 1 auto;
+    }
+
+    .sp-split {
+        flex: 0 0 auto;
+        width: @sp-split-dim;
+        background: #55A79A;
+        cursor: col-resize;
+    }
+}
+
+.sp-board.is-vertical {
+    flex-direction: column;
+
+    .sp-split {
+        height: @sp-split-dim;
+        background: #55A79A;
+        cursor: row-resize;
+        width: 100%;
+    }
+}

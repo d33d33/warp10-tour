@@ -1,0 +1,54 @@
+.einstein {
+    position: relative;
+    height: 70%;
+    min-height: 20%;
+    max-height: 80%;
+    @statusHeight: 48px;
+
+    .status {
+        height: @statusHeight;
+        padding: 0 16px;
+
+        #msg {
+            height: @statusHeight;
+
+            p {
+                display: inline-block;
+                line-height: @statusHeight;
+                vertical-align: top;
+            }
+
+            img {
+                height: 100%;
+                padding: 8px 8px 8px 0;
+            }
+        }
+
+        .actions {
+            line-height: @statusHeight;
+
+            button {
+                vertical-align: bottom;
+            }
+
+            .button-outline {
+                color: #55A79A;
+                background: transparent;
+            }
+        }
+    }
+
+    .CodeMirror {
+        position: absolute;
+        top: @statusHeight;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: inherit;
+        background: #d8f2ff;
+    }
+
+    .CodeMirror-gutters {
+        background: #bce6fb;
+    }
+}

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>A Tour of Warp 10</title>
+    <meta name="description" content="A simple Warp 10 tutorial">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/milligram.css">
+    <link rel="stylesheet" href="css/codemirror.css">
+    <link rel="stylesheet" href="css/c3.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body class="tw">
+    <nav class="nav">
+        <h1 id="menu">A Tour of Warp 10</h1>
+    </nav>
+
+    <div id="drawer" style="display: none"></div>
+
+    <div class="sp-board main">
+        <div class="sp-panel lesson">
+            <div id="lesson"></div>
+            <div class="control">
+              <p><a class="prev" id="prev">&lt;</a><span id="count">1/2</span><a class="next" id="next">&gt;</a></p>
+            </div>
+        </div>
+
+        <div class="sp-split v-split"></div>
+
+        <div class="sp-panel">
+            <div class="sp-board is-vertical">
+
+                <div class="sp-panel einstein">
+                    <div class="status clearfix">
+                        <div id="msg" class="float-left"></div>
+                        <div class="actions float-right">
+                            <button class="button button-outline" id="einst-reset">Reset</button>
+                            <button class="button" id="einst-run">Run</button>
+                        </div>
+                    </div>
+                    <div id="einst-script"></div>
+                </div>
+
+                <div class="sp-split h-split"></div>
+
+                <div class="sp-panel ans" id="ans"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-resizable.min.js"></script>
+    <script src="js/codemirror.js"></script>
+    <script src="js/json-formatter.js"></script>
+    <script src="js/d3.min.js"></script>
+    <script src="js/c3.min.js"></script>
+    <script src="js/lessons.js"></script>
+    <script src="js/splitter.js"></script>
+    <script src="js/editor.js"></script>
+    <script src="js/exec.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/viewer.js"></script>
+    <script src="js/actions.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
