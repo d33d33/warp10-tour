@@ -1,18 +1,35 @@
-#BUCKETIZE
+# Syntax
+
+`BUCKETIZE` takes a single list as parameter.
+
+The result of the call to `BUCKETIZE` will be a single list containing bucketized versions of all geo time series present in the input lists.
+
+## Format
 ```
 [ [GTS] ... [GTS] bucketizer lastbucket bucketspan bucketcount ] BUCKETIZE
 ```
-`BUCKETIZE` takes as input a single parameter which is a list of the following:
 
-`[GTS]` one or several lists of geo time series. The result of the call to `BUCKETIZE` will be a single list containing bucketized versions of all geo time series present in the input lists.
+## Parameters
+>`[GTS]`  
+> One or several lists of geo time series
 
-*lastbucket* specifies the timestamp in microseconds since the Unix Epoch of the end of the most recent bucket. If you set this value to 0, this timestamp will be computed automatically so it covers the most recent value of the geo time serie and falls on a *bucketspan* boundary.
+>`bucketizer`  
+> Function used to process bucket values.  
+> Available `bucketizer` are *bucketizer.sum*, *bucketizer.min*, *bucketizer.max* or *bucketizer.mean*
 
-*bucketspan* width in microseconds of each bucket. If you set this value to 0, it will be computed automatically.
+>`lastbucket`  
+> Timestamp in microseconds since the Unix Epoch of the end of the most recent bucket.  
+> If you set this value to 0, this timestamp will be computed automatically so it covers the most recent value of the geo time serie and falls on a `bucketspan` boundary.
 
-*bucketcount* number of buckets of the bucketized geo time series. If this value is set to 0, the number of buckets will be computed so the first value of the geo time serie is within the first bucket.
+> `bucketspan`  
+> Width in microseconds of each bucket.  
+> If you set this value to 0, it will be computed automatically.
 
-Available *bucketizer* functions are `bucketizer.sum`, `bucketizer.min`, `bucketizer.max` or `bucketizer.mean`
+> `bucketcount`  
+> Number of buckets of the bucketized geo time series.  
+> If this value is set to 0, the number of buckets will be computed so the first value of the geo time serie is within the first bucket.  
+
+Don't hesitate to modify the parameters on the left terminal to experiment answers
 
 ~~~~
 
