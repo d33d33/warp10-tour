@@ -59,6 +59,11 @@ module.exports = function (grunt) {
           dest: 'dist/js/'
         }, {
           expand: true,
+          cwd: 'node_modules/codemirror/addon/mode/',
+          src: ['simple.js'],
+          dest: 'dist/js/codemirror-mode/'
+        }, {
+          expand: true,
           cwd: 'node_modules/codemirror/lib/',
           src: ['*.css'],
           dest: 'dist/css/'
