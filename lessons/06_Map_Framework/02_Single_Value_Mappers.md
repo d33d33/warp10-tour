@@ -1,24 +1,35 @@
 # Single Value Mappers
 
- In this tutorial, you will use the **mapper to convert a GTS containing prices in euro in dollars on a wrapped GTS.**
+In this tutorial, you will use the mapper to convert a GTS containing prices in euro in dollars on a wrapped GTS.
 
-## MAP parameters
+## Format
 
-The **MAP** framework allows you to **apply a function on values of a Geo Time SeriesTM** that fall into a sliding window.
+```
+[ GTS or [GTS] mapperfunction prewindow postwindow occurences ] MAP
+```
 
-Map takes as input **a list of parameters**:
-* **one or several lists of GTS**
-* The **mapper function**.
-* the **width of the sliding window before** the value
-* the **width of the sliding window after** the value
-* The **last element** corresponds to "**occurences**" which is the limit of computation of a number.
+## Parameters
+>`[GTS]`  
+> One or several lists of geo time series
 
-For all elements except the set of GTS and the mapper function a default value 0 can be used, when those elements aren't required.
+>`mapperfunction`  
+> Function used to process values.  
 
-## Convert the fuel prices from euro to dollars
+>`prewindow`  
+> Width of the sliding window before the value
+
+> `postwindow`  
+> Width of the sliding window after the value
+> If you set this value to 0, it will be computed automatically.
+
+> `occurences`  
+> the limit of computation of a number
+
+## Exercice: Convert the fuel prices from euro to dollars
 
 On the 30 of november the rates between euro and dollar was **one euro equals 1.057 dollars**. To convert our prices in euro to dollar we have to **divide all of our price by 1.057**. As there is no mapper to divide value in WarpScpript, the [mapper.mul](http://www.warp10.io/reference/frameworks/mapper_mul/) will be used. This mapper is a **single value mapper, which means that it can't have a sliding window**. **Put 0 for each elements corresponding to the sliding window paramaters**. This mapper takes the number to multiply all values as a parameter between the set of GTS and the mapper function.
 
+Tips: in this case, we don't need a sliding-window, so {pre,post}window and occurence are equal to 0.
 ## Solution
 
 ```
