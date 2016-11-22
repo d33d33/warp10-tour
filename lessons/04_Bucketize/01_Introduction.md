@@ -5,7 +5,7 @@ A *bucket* is a time interval which spans a certain number of microseconds calle
 
 The `BUCKETIZE` framework is used to convert a non bucketized geo time serie into a bucketized one. The *bucketization* process collects the measurements of the original geo time serie which fall in each bucket and apply a *bucketizer* function on those data, thus leading to at most a single measurement for each bucket (there might be buckets with no measurements).
 
-The BUCKETIZE framework comes with a number of *bucketizers* which implement very common aggregation functions such as `SUM`, `MIN`, `MAX`, `MEAN`, etc.
+The `BUCKETIZE` framework comes with a number of *bucketizers* which implement very common aggregation functions such as `SUM`, `MIN`, `MAX`, `MEAN`, etc.
 
 >This tutorial is follow a `BUCKETIZE` pratical example. Let’s say that you have a GTS with several hundreds of points, like the one returned by the WarpScript request on the left:
 

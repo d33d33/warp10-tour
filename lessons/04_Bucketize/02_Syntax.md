@@ -2,7 +2,7 @@
 
 `BUCKETIZE` takes a single list as parameter.
 
-The result of the call to `BUCKETIZE` will be a single list containing bucketized versions of all geo time series present in the input lists.
+The result of the call to `BUCKETIZE` will be a single list containing *bucketized* versions of all geo time series present in the input lists.
 
 ## Format
 ```

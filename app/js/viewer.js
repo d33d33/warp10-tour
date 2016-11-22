@@ -16,7 +16,7 @@ $(function () {
         chart.destroy();
         chart = null;
       }
-      if(modeBtn) {
+      if (modeBtn) {
         modeBtn.off('click', tw.viewer.toggleMode);
       }
 
@@ -39,18 +39,17 @@ $(function () {
         var xs = {},
           dataset = [];
         res.forEach(function (gts) {
-          var x = ['x-' + gts.c];
-          var d = [gts.c];
+          var h = gts.c + JSON.stringify(gts.l);
+          var x = ['x-' + h];
+          var d = [h];
           gts.v.forEach(function (v) {
             x.push(Math.round(v[0]));
             d.push(v[1]);
           });
 
           dataset.push(x, d);
-          xs[gts.c] = 'x-' + gts.c;
+          xs[h] = 'x-' + h;
         });
-
-        console.log(dataset);
 
         $('#ans').html('<div class="ct-chart" style="position: absolute; top: 0; left: 0; right: 0; bottom:0; overflow: hidden;"><div id="chart"></div></div>');
         modeBtn = $('<button class="button button-outline" style="position: absolute; top: 10px; right: 10px;">json</button>');
@@ -68,10 +67,13 @@ $(function () {
               type: 'indexed' // Values hidden by css
             }
           },
+          legend: {
+            show: false
+          },
           tooltip: {
             format: {
               title: function (x) {
-                return moment(x/1000).toISOString();
+                return moment(x / 1000).toISOString();
               }
             }
           }
@@ -84,7 +86,7 @@ $(function () {
         modeBtn = $('<button class="button button-outline" style="position: absolute; top: 10px; right: 10px;">graph</button>');
         modeBtn.click(tw.viewer.toggleMode);
         $('#ans').append(modeBtn);
-  }
+      }
     },
     toggleMode: function () {
       graph = !graph;
