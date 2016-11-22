@@ -81,8 +81,18 @@ $(function () {
 
         setTimeout(tw.viewer.resize);
       } else {
-        var formatter = new JSONFormatter(json, 3);
-        ans.html(formatter.render());
+        var rows = $('<div></div>');
+        json.forEach(function (r, i) {
+          console.log(i);
+          var row = $('<div class="tw-row"></div>');
+
+          var formatter = new JSONFormatter(r, 0);
+          row.append('<div class="row-number">' + (i+1) + '</div>');
+          row.append(formatter.render());
+          rows.append(row);
+        });
+        ans.html(rows);
+
         modeBtn = $('<button class="button button-outline" style="position: absolute; top: 10px; right: 10px;">graph</button>');
         modeBtn.click(tw.viewer.toggleMode);
         $('#ans').append(modeBtn);

@@ -2,7 +2,7 @@
 
 Welcome to a tour of [Warp10](http://www.warp10.io/)
 
-The tour is divided into a list of modules that you can access by clicking on **A Tour of Go** on the top left of the page.
+The tour is divided into a list of modules that you can access by clicking on **A Tour of Warp10** on the top left of the page.
 
 Throughout the tour you will find a series of slides and exercises for you to complete.
 
