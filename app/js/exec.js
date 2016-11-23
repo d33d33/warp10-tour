@@ -10,7 +10,7 @@ $(function () {
     }
     running = true;
 
-    $.post('https://warp.cityzendata.net/dist/api/v0/exec/einstein', mc2)
+    $.post('https://warp.cityzendata.net/api/v0/exec', mc2)
       .done(function (res, status, jqXHR) {
         var exec = Math.round(parseInt(jqXHR.getResponseHeader('X-CityzenData-Elapsed')) / 1000 / 1000);
 
