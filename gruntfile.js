@@ -25,6 +25,17 @@ module.exports = function (grunt) {
         }
       }
     },
+    postcss: {
+      options: {
+        map: true,
+        processors: [
+          require('autoprefixer')()
+        ]
+      },
+      dist: {
+        src: 'dist/css/main.css'
+      }
+    },
     copy: {
       dist: {
         files: [{
@@ -102,9 +113,9 @@ module.exports = function (grunt) {
       }
     },
     execute: {
-        lessons: {
-            src: ['bundleLessons.js']
-        }
+      lessons: {
+        src: ['bundleLessons.js']
+      }
     },
     watch: {
       dev: {
@@ -123,10 +134,10 @@ module.exports = function (grunt) {
       }
     },
     'http-server': {
-        dev: {
-          root: 'dist',
-          port: 8080
-        }
+      dev: {
+        root: 'dist',
+        port: 8080
+      }
     },
   });
 
@@ -136,9 +147,10 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-http-server');
   grunt.loadNpmTasks('grunt-execute');
+  grunt.loadNpmTasks('grunt-postcss');
 
   grunt.registerTask('default', ['clean:dist', 'lessons', 'dist']);
-  grunt.registerTask('dist', ['copy:dist', 'less:dist']);
+  grunt.registerTask('dist', ['copy:dist', 'less:dist', 'postcss:dist']);
   grunt.registerTask('lessons', ['execute:lessons']);
   grunt.registerTask('dev', ['clean:dist', 'watch:dev']);
   grunt.registerTask('serve', ['http-server']);
