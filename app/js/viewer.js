@@ -42,6 +42,11 @@ $(function () {
         case 'graph':
           res = json[0];
 
+          if(!res || !res.v) {
+            $('#ans').html('No data to plot');
+            break;
+          }
+
           var xs = {},
             dataset = [];
           res.forEach(function (gts) {
@@ -98,9 +103,8 @@ $(function () {
           break;
         default:
           var rows = $('<div></div>');
-          var row = $('<div class="tw-row"></div>');
           json.forEach(function (r, i) {
-            console.log(r);
+            var row = $('<div class="tw-row"></div>');
 
             row.append('<div class="row-number">' + (i + 1) + '</div>');
             row.append(JSON.stringify(r));
