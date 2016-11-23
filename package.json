@@ -17,7 +17,7 @@
     "showdown": "^1.5.0"
   },
   "scripts": {
-    "build:gh-pages": "grunt && mv ./dist/ ../dist-tmp && rm -r ./* && mv ../dist-tmp/* ./"
+    "build:gh-pages": "grunt && git rm -r ./* && rm -r ./node_modules && rm lessons.js && mv ./dist/* ./"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
