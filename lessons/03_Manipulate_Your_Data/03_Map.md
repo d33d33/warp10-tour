@@ -14,7 +14,7 @@ In this example, we're creating a fake GTS called test.mapper which is holding o
 | 300       | -8    |
 
 
-By using mapper.abs, you're getting the absolute value of each single value in the sliding window.
+By using mapper.abs, you're getting the absolute value of each single value in the sliding window. Since *occurences* is set to 0, the mapper will be applied on each tick.
 
 | Timestamp | Value |
 |-----------|-------|
@@ -23,10 +23,10 @@ By using mapper.abs, you're getting the absolute value of each single value in t
 | 300       | 8     |
 
 
-For more information about Map, please go to [the according lesson](/#4-1).
+For more information about Map, please go to [the according lesson](/#6-1).
 ~~~
 
-NEWGTS 'test.bucketize' RENAME
+NEWGTS 'test.mapper' RENAME
 
 100  NaN NaN NaN -10 ADDVALUE
 200  NaN NaN NaN -9 ADDVALUE
