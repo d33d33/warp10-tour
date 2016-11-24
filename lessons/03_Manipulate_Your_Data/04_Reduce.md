@@ -15,8 +15,8 @@ Thanks to reduce, we're able to reduce them into one single GTS and apply a mean
 
 | Timestamp | Value of GTS1 |
 |-----------|---------------|
-| 10        | -27           |
-| 20        | -173          |
+| 10        | -126.5        |
+| 20        | -82.5         |
 
 For more information about Reduce, please go to [the according lesson](/#4-1).
 ~~~
@@ -28,8 +28,8 @@ For more information about Reduce, please go to [the according lesson](/#4-1).
   20 NaN NaN NaN -123.0 ADDVALUE
   NEWGTS "GTS2" RENAME
   { 'label0' '42' } RELABEL
-  10 NaN NaN NaN -12.0 ADDVALUE
-  20 NaN NaN NaN -223.0 ADDVALUE
+  10 NaN NaN NaN -211.0 ADDVALUE
+  20 NaN NaN NaN -42 ADDVALUE
 ]
 
 [
