@@ -14,7 +14,7 @@ In this example, we're creating a fake GTS called test.mapper which is holding o
 | 300       | -8    |
 
 
-By using mapper.abs, you're getting the absolute value of each single value in the sliding window. Since *occurences* is set to 0, the mapper will be applied on each tick.
+By using mapper.abs, you can get the absolute value of each single value in the sliding window. 
 
 | Timestamp | Value |
 |-----------|-------|

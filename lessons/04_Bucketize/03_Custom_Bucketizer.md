@@ -38,9 +38,8 @@ In the example on the side we use a custom `bucketizer` to drop information of a
 ```
 
 ~~~~
-NEWGTS
 [
-    NEWGTS
+   NEWGTS
     'example_gts' RENAME
     1434600618629894 3600000000 15 * - 1200000000 + 'now' STORE
     $now NaN NaN NaN 0 ADDVALUE
@@ -54,7 +53,9 @@ NEWGTS
     $now 8 + NaN NaN NaN 8 ADDVALUE
     $now 9 + NaN NaN NaN 9 ADDVALUE
     $now 10 + NaN NaN NaN 10 ADDVALUE
-    <%
+] 'GTS' STORE
+
+<%
       'mapping_window' STORE    //  Storing macro input information
       $mapping_window 0 GET     // Extract the current tick
       <% 3 % 0 == %>            // Condition: the current tick % 3 == 0
@@ -67,8 +68,7 @@ NEWGTS
       %>                                            // Then
       <% $mapping_window 0 GET NaN NaN NaN 0 %>  // Else
       IFTE
-    %>
-    MACROBUCKETIZER
-    0 2 0
-]
-BUCKETIZE
+%> MACROBUCKETIZER 'MyMacro' STORE
+
+
+[ $GTS $MyMacro 0 2 0 ] BUCKETIZE

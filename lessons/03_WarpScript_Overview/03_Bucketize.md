@@ -5,9 +5,12 @@ Bucketize is one of the most useful framework in WarpScript. With it, **you'll b
 * **Synchronize your tick**
 * **Downsampling your data**
 
+Tick synchronization is needed to perform reductions (GroupBy) since you need ticks to be aligned. 
+It's also needed to stack graphs with tools like Grafana. Grafana will perform the stacking by adding values from different series that share the same ticks, so you need them to be synchronized but the same bucketization.
+
 ## Example
 
-In this example, we're creating a GTS called "test.bucketize", which is holding points every 100 ms. So we have:
+In this example, we create a GTS called "test.bucketize", which is holding points every 100µs. So we have:
 
 | Timestamp | Value |
 |-----------|-------|
@@ -18,12 +21,15 @@ In this example, we're creating a GTS called "test.bucketize", which is holding 
 | 500       | 6     |
 
 
-by calling bucketizer.max, we're creating 2 buckets which are holding the max value found in each one of them. The result is:
+by calling bucketizer.max with the right parameters, we're creating 200µs-spaced buckets which are holding the max value found in each one of them. The result is:
+
+// TOFIX
 
 | Timestamp | Value |
 |-----------|-------|
-| 299       | 10    |
-| 500       | 8    |
+| 200       | 10    |
+| 400       | 8     |
+| 600       | 6     |
 
 
 For more information about BUCKETIZE, please go to [the according lesson](/#4-1).
