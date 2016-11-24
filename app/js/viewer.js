@@ -42,7 +42,13 @@ $(function () {
         case 'graph':
           res = json[0];
 
-          if(!res || !res.v) {
+          if (!res) {
+            $('#ans').html('No data to plot');
+            break;
+          }
+          if (res.v) {
+            res = [res];
+          } else if (!$.isArray(res)) {
             $('#ans').html('No data to plot');
             break;
           }
@@ -50,6 +56,9 @@ $(function () {
           var xs = {},
             dataset = [];
           res.forEach(function (gts) {
+            if(!gts.v) {
+              return;
+            }
             var h = gts.c + JSON.stringify(gts.l);
             var x = ['x-' + h];
             var d = [h];
