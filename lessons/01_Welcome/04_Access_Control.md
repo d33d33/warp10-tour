@@ -5,7 +5,7 @@ The **Warp 10 platform** does provides bases bricks for integrate it into your a
 ## Roles
 
 ### Data Producer
-The data *producer* is identified by an UUID. He have the responsibility of pushing data onto the **Warp 10 platform** with a *write token*
+The data *producer* is identified by an UUID. He has the responsibility of pushing data onto the **Warp 10 platform** with a *write token*
 
 ### Data Owner
 Data stored onto **Warp 10 platform** belongs to an UUID. It can be the same as the producer UUID or not.
