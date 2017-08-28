@@ -18,7 +18,7 @@ Thanks to reduce, we're able to reduce them into one single GTS and apply a mean
 | 10        | 75            |
 | 20        | 25            |
 
-For more information about Reduce, please go to [the according lesson](/#4-1).
+For more information about Reduce, please go to [the according lesson](/#7-1).
 ~~~
 
 [
