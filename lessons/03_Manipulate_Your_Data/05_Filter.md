@@ -18,7 +18,7 @@ Using filter.last.gt, we're retrieving only selects the Geo Time SeriesTM whose 
 | 10        | 42    |
 | 20        | 123    |
 
-For more information about Filter, please go to [the according lesson](/#4-1).
+For more information about Filter, please go to [the according lesson](/#5-1).
 ~~~
 
 [
