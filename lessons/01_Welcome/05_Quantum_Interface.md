@@ -36,7 +36,7 @@ It's a very fast API route to list existing **TimeSeries** with attributes and t
 ## WarpScript section
 
 This is the most important section, this is where you can test your scripts.
-The response can be ploted. *WarpScript do not take care of new lines beacause it's a stack language, so you can indent like you want in text area*
+The response can be ploted. *WarpScript do not take care of new lines because it's a stack language, so you can indent like you want in text area*
 
 ## Usefull tools
 
@@ -60,7 +60,7 @@ To prevent someone to get tokens see [WRAP][wrap_function] documentation
 
 Furthermore this two buttons will host data into **Cityzendata** storage, It's not a good thing for privates datas.
 
-When you share somethingin this way you will receive 2 things, a link to send to someone and a revocation link to delete your shared datas. 
+When you share something in this way you will receive 2 things, a link to send to someone and a revocation link to delete your shared datas. 
 
 #### Using permalinks
 
@@ -81,5 +81,5 @@ This will let you upload an mc2 script file.
 
 With that you can organize your scripts.
 
-[/delete]: <(http://www.warp10.io/apis/delete/>
+[/delete]: <http://www.warp10.io/apis/delete/>
 [wrap_function]: <http://www.warp10.io/reference/functions/function_WRAP/>
